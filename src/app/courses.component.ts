@@ -12,17 +12,23 @@ import { AuthorService } from './author.service';
     <br/>
     <ul>
         <li *ngFor="let course of courses">
-            {{ course }}
+            {{ course.title | uppercase }} ||
+            {{ course.numberofstudents | number }} ||
+            {{ course.rating | number:'1.1-1' }} ||
+            {{ course.price | currency: 'INR' }} ||
+            {{ course.relaeasedate | date:'shortDate' }}
         </li>
     </ul>
     <hr>
     <div (click)="onDivClicked()" >
-    <input #authorname (keyup.enter)="onEnter(authorname.value)"  />
+
+        <input [(ngModel)]="authorname" (keyup.enter)="onEnter()"  />
+
         <button class="btn btn-primary" id="clikemebtn" 
         [style.color]="isActive ? 'white' : 'red' "
         [class.active]=isActive
         (click)="onClick($event)" 
-        >Click me</button>
+        >Save</button>
     </div>
     <h2>{{ "Author List :"}} </h2>
     <br/>
@@ -39,7 +45,7 @@ export class CoursesComponent {
     title="List of courses";
     isActive= false;
     courses;
-    inputtext="Hello"
+    authorname=""
     authors=[];
     //injecting the dependency in the constructor
     constructor(service: CoursesService,private authorService:AuthorService){
@@ -52,17 +58,17 @@ export class CoursesComponent {
     }
     onClick($event)
     {
+        this.authors.push(this.authorname);
+        console.log(this.authorname);
         $event.stopPropagation(); // Avoid event bublling
-        alert("Button clicked");
-        console.log($event);
     }
     onDivClicked()
     {
         console.log("Div is clicked");
     }
-    onEnter(authorname){
-    this.authors.push(authorname);
-    console.log(authorname)
+    onEnter(){
+    this.authors.push(this.authorname);
+    console.log(this.authorname)
 
     }
 
