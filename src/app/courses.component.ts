@@ -16,7 +16,8 @@ import { AuthorService } from './author.service';
         </li>
     </ul>
     <hr>
-    <div (click)="onDivClicked()">
+    <div (click)="onDivClicked()" >
+    <input #authorname (keyup.enter)="onEnter(authorname.value)"  />
         <button class="btn btn-primary" id="clikemebtn" 
         [style.color]="isActive ? 'white' : 'red' "
         [class.active]=isActive
@@ -38,7 +39,8 @@ export class CoursesComponent {
     title="List of courses";
     isActive= false;
     courses;
-    authors;
+    inputtext="Hello"
+    authors=[];
     //injecting the dependency in the constructor
     constructor(service: CoursesService,private authorService:AuthorService){
         this.courses = service.getCourses();
@@ -57,6 +59,11 @@ export class CoursesComponent {
     onDivClicked()
     {
         console.log("Div is clicked");
+    }
+    onEnter(authorname){
+    this.authors.push(authorname);
+    console.log(authorname)
+
     }
 
 }
