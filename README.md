@@ -1,6 +1,6 @@
 # AngularDemo
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.6.
+This project is just for angular practice from Mosh udemy video series.
 
 ## Development server
 
@@ -10,6 +10,19 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
+
+Run `ng g c component-name` to generate a new component.
+Run `ng g s service-name` to generate a new service.
+
+#Benfits
+ It automatically updates the required files.
+ 
+#Note:
+
+Components:
+1. create a component - provide selector info
+2. Register it in module
+3. use component using selector
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
