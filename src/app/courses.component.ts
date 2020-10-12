@@ -10,6 +10,8 @@ import { AuthorService } from './author.service';
 
     <h2>{{ "Title :"+ gettitle() }} </h2>
     <br/>
+    {{ text | summary:10 }}
+    <br/>
     <ul>
         <li *ngFor="let course of courses">
             {{ course.title | uppercase }} ||
@@ -43,6 +45,9 @@ import { AuthorService } from './author.service';
 export class CoursesComponent {
 
     title="List of courses";
+    text=`
+    Hi, This is a long paragraph but i will use summary pipe here. It is a custom pipe to show first 50 words.
+    `
     isActive= false;
     courses;
     authorname=""
