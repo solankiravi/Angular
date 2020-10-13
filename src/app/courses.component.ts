@@ -1,24 +1,31 @@
 import { Component } from '@angular/core'
-import { CoursesService } from './courses.service';
+import { CoursesService, Course } from './courses.service';
 import { AuthorService } from './author.service';
 
 @Component({
     selector: 'courses',
     template: `
 
-    
-
     <h2>{{ "Title :"+ gettitle() }} </h2>
     <br/>
     {{ text | summary:10 }}
     <br/>
     <ul>
+    <span class="glyphicon glyphicon-star"></span>
         <li *ngFor="let course of courses">
             {{ course.title | uppercase }} ||
             {{ course.numberofstudents | number }} ||
             {{ course.rating | number:'1.1-1' }} ||
             {{ course.price | currency: 'INR' }} ||
-            {{ course.relaeasedate | date:'shortDate' }}
+            {{ course.relaeasedate | date:'shortDate' }} ||
+            
+            <span class="fa" (click)="course_fav_clicked(course)"
+            [class.fa-star]="course.isFavourite"
+            [class.fa-star-o]="!course.isFavourite"
+            >
+            </span>
+            {{ course.isFavourite }}
+            
         </li>
     </ul>
     <hr>
@@ -45,6 +52,7 @@ import { AuthorService } from './author.service';
 export class CoursesComponent {
 
     title="List of courses";
+    isFavourite:boolean;
     text=`
     Hi, This is a long paragraph but i will use summary pipe here. It is a custom pipe to show first 50 words.
     `
@@ -74,6 +82,16 @@ export class CoursesComponent {
     onEnter(){
     this.authors.push(this.authorname);
     console.log(this.authorname)
+
+    }
+    coursefavclicked(course:any)
+    {
+        console.log(course)
+    }
+    course_fav_clicked(course: Course)
+    {
+        course.isFavourite = ! course.isFavourite
+            console.log(course.isFavourite)
 
     }
 
