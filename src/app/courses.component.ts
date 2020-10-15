@@ -25,7 +25,7 @@ import { AuthorService } from './author.service';
             >
             </span>
             {{ course.isFavourite }}
-            
+            <favourite [isFavorite]="post.isFavorite" (click)="favclicked()" ></favourite>
         </li>
     </ul>
     <hr>
@@ -60,12 +60,16 @@ export class CoursesComponent {
     courses;
     authorname=""
     authors=[];
+    post={
+        titles: "Title",
+        isFavourite: true
+    }
     //injecting the dependency in the constructor
     constructor(service: CoursesService,private authorService:AuthorService){
         this.courses = service.getCourses();
         this.authors = authorService.getauthor();
     }
-
+    
     gettitle(){
         return this.title;
     }
@@ -93,6 +97,11 @@ export class CoursesComponent {
         course.isFavourite = ! course.isFavourite
             console.log(course.isFavourite)
 
+    }
+    favclicked()
+    {
+        this.post.isFavourite = ! this.post.isFavourite
+        console.log('course component fav clicked')
     }
 
 }
