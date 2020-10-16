@@ -25,7 +25,7 @@ import { AuthorService } from './author.service';
             >
             </span>
             {{ course.isFavourite }}
-            <favourite [isFavorite]="post.isFavorite" (click)="favclicked()" ></favourite>
+            <favourite [is-favorite]="post.isFavorite" (click)="favclicked()" ></favourite>
         </li>
     </ul>
     <hr>

@@ -6,14 +6,14 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./favourite.component.css']
 })
 export class FavouriteComponent implements OnInit {
-  @Input() isFavourite:boolean;
+  @Input('is-favorite') isSelected:boolean;
   constructor() { }
 
   ngOnInit(): void {
   }
   clicked()
   {
-    this.isFavourite = ! this.isFavourite
+    this.isSelected = ! this.isSelected
     console.log('fav component')
   }
 
