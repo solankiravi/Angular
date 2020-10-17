@@ -25,7 +25,9 @@ import { AuthorService } from './author.service';
             >
             </span>
             {{ course.isFavourite }}
-            <favourite [is-favorite]="post.isFavorite" (click)="favclicked()" ></favourite>
+            <favourite [is-favorite]="post.isFavorite"
+            (change)="onfavchanged()"
+             (click)="favclicked()" ></favourite>
         </li>
     </ul>
     <hr>
@@ -102,6 +104,10 @@ export class CoursesComponent {
     {
         this.post.isFavourite = ! this.post.isFavourite
         console.log('course component fav clicked')
+    }
+    onfavchanged()
+    {
+        console.log("Fav changed");
     }
 
 }
