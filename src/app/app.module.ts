@@ -4,32 +4,25 @@ import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CoursesComponent } from './courses.component';
-import { CourseComponent } from './course/course.component';
-import { CoursesService } from './courses.service';
-import { AuthorService } from './author.service';
-import { SummaryPipe } from './summary.pipe';
-import { FavouriteComponent } from './favourite/favourite.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    CoursesComponent,
-    CourseComponent,
-    SummaryPipe,
-    FavouriteComponent
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule
     
   ],
   providers: [
     //all the depency should be mentioned here
-    CoursesService,
-    AuthorService
+
 
   ],
   bootstrap: [AppComponent]
