@@ -123,5 +123,8 @@
       }
     }
   },
-  "defaultProject": "Angular-Demo"
+  "defaultProject": "Angular-Demo",
+  "cli": {
+    "analytics": false
+  }
 }
