@@ -1,0 +1,83 @@
+.about
+{
+    color: white;
+    padding:10px;
+    /* margin-left: 10%; */
+    margin-top: 50px;
+    font-weight: 400;
+    line-height: 150%;
+    font-size:18px;
+    font-family: "Roboto",sans-serif;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+section
+{
+    padding-bottom: 30px;
+    padding-top:0px;
+}
+h2 {
+    font-size: 3.56rem;
+    line-height: 3.916rem;
+}
+h5{
+    font-size: 1.64rem;
+    line-height:150%;
+}
+
+.highlight-name
+{
+    background-color: #008073 !important;
+    
+}
+
+.icon-btn {
+    margin-left: auto;
+    width: 50px;
+    height: 50px;
+    border: 0;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-size: 30px;
+    border-radius: 45px;
+    display: inline-block; 
+    margin: 4px;
+}
+.linkedin
+{
+    color: #0077b5;
+}
+.github{
+    color:black;
+}
+.info-buttons{
+    margin:5px;
+    text-decoration: none;
+}
+
+.readme {
+    position: relative;
+    padding: 11px 35px;
+    background: #fff;
+    color: #00796b;
+    border: 2px solid #fff;
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: 1px;
+    display: inline-block;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+.contactme {
+    position: relative;
+    padding: 11px 35px;
+    background: none;
+    color: #fff;
+    border: 2px solid #fff;
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: 1px;
+    display: inline-block;
+    margin-top: 1.5em;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
