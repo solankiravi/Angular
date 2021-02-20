@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,16 +6,12 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  @ViewChild('sidebar') sidebarView: ElementRef;
-  @ViewChild('maincontent') maincontentView: ElementRef;
+ 
   constructor() {};
 
   ngOnInit(): void {
 
   };
-  ngAfterViewInit() {
-    let sidebarwidth=this.sidebarView.nativeElement.width;
-    
-}
+
 
 }
