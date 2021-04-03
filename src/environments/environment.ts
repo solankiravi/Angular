@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  name: 'Ravi Kumar'
+  name: 'Ravi Kumar',
+  config: "assets\data.json"
 };
 
 /*
